@@ -128,7 +128,7 @@ public class EnemyManager : MonoBehaviour
 
     public void ActDeactEnemy(bool act)
     {
-        foreach(var enemy in enemies) 
+        foreach (var enemy in enemies)
         {
             enemy.gameObject.SetActive(act);
         }

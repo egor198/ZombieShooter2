@@ -15,10 +15,6 @@ public class EnemyController : MonoBehaviour
     public float damageAnimChance = 0.3f; // 30% шанс на анимацию урона
     //public HealthBar healthBar; // Опционально
 
-    [Header("Approach Settings")]
-    public float minDistanceToCamera = 3f; // Минимальная дистанция к камере
-    public float approachDistance = 2f; // Дистанция приближения после атаки
-
     [Header("Movement Settings")]
     public float moveSpeed = 3f;
     public float rotationSpeed = 5f;
@@ -80,6 +76,12 @@ public class EnemyController : MonoBehaviour
     private CapsuleCollider colider;
     private GameManager gameManager;
 
+    [Header("Ground Spawn Settings")]
+    public float groundSpawnChance = 0.3f; // Шанс появления из земли
+    public float groundSpawnDuration = 1.5f; // Длительность анимации появления
+    private bool isSpawningFromGround = false;
+    private Vector3 groundSpawnOffset = new Vector3(0, -2f, 0); // Смещение под землю
+
     void Start()
     {
         rb = GetComponent<Rigidbody>();
@@ -112,7 +114,7 @@ public class EnemyController : MonoBehaviour
 
     void Update()
     {
-        if (!isAlive) return;
+        if (!isAlive || isSpawningFromGround) return;
 
         // Атака при достижении точки
         if (isAtWaypoint && !isRotatingToCamera && isReadyToAttack())
@@ -120,20 +122,6 @@ public class EnemyController : MonoBehaviour
             if (Time.time >= nextAttackTime)
             {
                 Attack();
-            }
-        }
-
-        if (mainCamera != null && isAtWaypoint)
-        {
-            float distanceToCamera = Vector3.Distance(
-                transform.position,
-                mainCamera.transform.position
-            );
-
-            if (distanceToCamera <= minDistanceToCamera)
-            {
-                // Слишком близко к камере - не пытаемся приближаться дальше
-                return;
             }
         }
 
@@ -153,6 +141,41 @@ public class EnemyController : MonoBehaviour
         if (!isActive || targetWaypoint == null) return;
 
         MoveToWaypoint();
+    }
+
+    private IEnumerator SpawnFromGround()
+    {
+        isSpawningFromGround = true;
+
+        // Начальная позиция под землей
+        Vector3 undergroundPosition = targetWaypoint.transform.position + groundSpawnOffset;
+        transform.position = undergroundPosition;
+
+        // Анимация появления
+        if (animator != null)
+        {
+            animator.SetTrigger("SpawnFromGround");
+        }
+
+        // Плавное поднятие на поверхность
+        float elapsedTime = 0f;
+        while (elapsedTime < groundSpawnDuration)
+        {
+            transform.position = Vector3.Lerp(
+                undergroundPosition,
+                targetWaypoint.transform.position,
+                elapsedTime / groundSpawnDuration
+            );
+            elapsedTime += Time.deltaTime;
+            yield return null;
+        }
+
+        // Фиксируем конечную позицию
+        transform.position = targetWaypoint.transform.position;
+        isSpawningFromGround = false;
+
+        // После появления начинаем поворот к камере
+        PrepareCameraRotation();
     }
 
     private void MoveToWaypoint()
@@ -221,61 +244,6 @@ public class EnemyController : MonoBehaviour
                 euler.z
             );
         }
-    }
-
-    private bool MoveCloserToCamera()
-    {
-        if (mainCamera == null) return false;
-
-        // Вычисляем направление к камере
-        Vector3 directionToCamera = (mainCamera.transform.position - transform.position).normalized;
-
-        // Вычисляем новую позицию (приближаемся к камере, но не ближе minDistanceToCamera)
-        Vector3 targetPosition = transform.position + directionToCamera * approachDistance;
-
-        // Проверяем дистанцию до камеры
-        float distanceToCamera = Vector3.Distance(targetPosition, mainCamera.transform.position);
-        if (distanceToCamera < minDistanceToCamera)
-        {
-            // Не подходим ближе минимальной дистанции
-            targetPosition = mainCamera.transform.position - directionToCamera * minDistanceToCamera;
-        }
-
-        // Создаем временный Waypoint для новой позиции
-        GameObject tempWaypoint = new GameObject("TempWaypoint");
-        tempWaypoint.transform.position = targetPosition;
-        Waypoint waypointComponent = tempWaypoint.AddComponent<Waypoint>();
-
-        // Освобождаем текущую точку
-        if (targetWaypoint != null)
-        {
-            targetWaypoint.isOccupied = false;
-            targetWaypoint.occupiedBy = null;
-        }
-
-        // Занимаем новую позицию
-        if (waypointComponent.TryOccupy(this))
-        {
-            targetWaypoint = waypointComponent;
-            isActive = true;
-            isAtWaypoint = false;
-            isRotatingToCamera = false;
-
-            nextAttackTime = Time.time + Random.Range(minAttackDelay, maxAttackDelay);
-
-            if (animator != null)
-            {
-                animator.SetBool("isIdle", false);
-                animator.SetBool("isRunning", true);
-            }
-
-            // Уничтожаем временный Waypoint после использования
-            Destroy(tempWaypoint, 5f);
-            return true;
-        }
-
-        Destroy(tempWaypoint);
-        return false;
     }
 
     // Проверка готовности к атаке
@@ -474,6 +442,8 @@ public class EnemyController : MonoBehaviour
         }
 
         isAttacking = false;
+        isSpawningFromGround = false;
+        StopAllCoroutines();
         //StopAllCoroutines();
 
         // Убираем из списка врагов
@@ -515,17 +485,19 @@ public class EnemyController : MonoBehaviour
     // Корутина для сброса состояния атаки
     private IEnumerator ResetAttackState()
     {
+        // Ждем 0.5 секунды (время анимации атаки)
         yield return new WaitForSeconds(0.5f);
+
+        // Здесь можно добавить логику нанесения урона игроку
+        // Например: gameManager.PlayerTakeDamage(damagePerHit);
+
         isAttacking = false;
 
-        if (isAlive && isAtWaypoint)
+        // Если это босс, перемещаем его на новую точку после атаки
+        if (isBoss && isAlive && isAtWaypoint)
         {
-            // Для всех врагов: пытаемся приблизиться к камере
-            bool moved = MoveCloserToCamera();
-            if (!moved)
-            {
-                // Не удалось приблизиться - остаемся на месте
-            }
+            yield return new WaitForSeconds(bossMoveDelay);
+            MoveBossToNewPosition();
         }
     }
 
@@ -557,21 +529,34 @@ public class EnemyController : MonoBehaviour
                 return;
             }
 
-            // Атомарная попытка занять точку
             if (potentialWaypoint.TryOccupy(this))
             {
                 targetWaypoint = potentialWaypoint;
                 isActive = true;
-                isAtWaypoint = false;
-                isRotatingToCamera = false;
+
+                // Решаем, будет ли враг появляться из земли
+                bool shouldSpawnFromGround = Random.value < groundSpawnChance;
+
+                if (shouldSpawnFromGround)
+                {
+                    isAtWaypoint = true;
+                    StartCoroutine(SpawnFromGround());
+                }
+                else
+                {
+                    // Обычное поведение - движение к точке
+                    isAtWaypoint = false;
+                    if (animator != null)
+                    {
+                        animator.SetBool("isRunning", true);
+                    }
+                }
+
                 Debug.Log($"Enemy {name} occupied waypoint {targetWaypoint.name}");
                 return;
             }
-
             attempts++;
         }
-
-        Debug.LogWarning($"{name} failed to find free waypoint after {maxAttempts} attempts");
     }
 
     public float GetDamageMultiplierForCollider(Collider hitCollider)
@@ -629,6 +614,9 @@ public class EnemyController : MonoBehaviour
 
         isAttacking = false;
         nextAttackTime = Time.time + Random.Range(minAttackDelay, maxAttackDelay);
+        isSpawningFromGround = false;
+        StopAllCoroutines();
+
         //if (healthBar != null) healthBar.SetHealth(currentHealth);
     }
 

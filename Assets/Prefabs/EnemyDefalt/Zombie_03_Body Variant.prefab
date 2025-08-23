@@ -197,6 +197,8 @@ MonoBehaviour:
   currentHealth: 0
   isAlive: 1
   damageAnimChance: 0.3
+  chanceToSpawnInFront: 0
+  spawnRiseSpeed: 2
   moveSpeed: 3
   rotationSpeed: 8
   stoppingDistance: 0.1
