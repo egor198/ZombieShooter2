@@ -1,5 +1,4 @@
 using BezierSolution;
-using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -66,9 +65,14 @@ public class GameManager : MonoBehaviour
     private float timerPoint1;
     public static int currentBox;
 
+    public GameObject[] prefabCameraEnemys;
+    private float timer;
+    public static bool isCameraEnemy;
+
     private void Start()
     {
         timerDuration = 10;
+        timer = 30;
         if(PlayerPrefs.GetInt("Dif") == 0)
             Difficult = difficult.defalt;
         else
@@ -86,6 +90,17 @@ public class GameManager : MonoBehaviour
 
     private void Update()
     {
+        if(timer <= 0 && !isCameraEnemy)
+        {
+            Instantiate(prefabCameraEnemys[Random.Range(0, prefabCameraEnemys.Length)], Camera.main.transform);
+            isCameraEnemy = true;
+            timer = 30;
+        }
+        else
+        {
+            timer -= Time.deltaTime;
+        }
+
         if(isFireBonus || isIceBonus)
         {
             if (!isInitialized)

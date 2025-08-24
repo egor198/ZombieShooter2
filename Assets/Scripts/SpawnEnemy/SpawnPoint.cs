@@ -137,7 +137,7 @@ public class SpawnPoint : MonoBehaviour
         RaycastHit hit;
 
         // Корректируем позицию спавна на поверхности
-        if (Physics.Raycast(transform.position + Vector3.up * 0.8f,
+        if (Physics.Raycast(transform.position + Vector3.up * 0.9f,
                             Vector3.down,
                             out hit,
                             20f))

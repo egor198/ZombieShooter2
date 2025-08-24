@@ -99,7 +99,8 @@ public class SpawnerEnemyController : MonoBehaviour
         // Создаем эффект появления
         if (spawnEffect != null)
         {
-            Instantiate(spawnEffect, spawnPosition, Quaternion.identity);
+            GameObject eff = Instantiate(spawnEffect, spawnPosition - posUp, Quaternion.identity);
+            Destroy(eff, emergeDuration);
         }
 
         // Плавное появление из земли
@@ -110,7 +111,7 @@ public class SpawnerEnemyController : MonoBehaviour
         {
             elapsed += Time.deltaTime;
             float progress = elapsed / emergeDuration;
-            transform.position = Vector3.Lerp(startPos, spawnPosition - posUp, progress);
+            transform.position = Vector3.Lerp(startPos, spawnPosition, progress);
             yield return null;
         }
 
@@ -344,7 +345,7 @@ public class SpawnerEnemyController : MonoBehaviour
             Instantiate(deathEffect, transform.position, Quaternion.Euler(-90, 0, 0));
 
         // Отключаем физику через время
-        StartCoroutine(DisablePhysics(1f));
+        StartCoroutine(DisablePhysics(1.4f));
 
         // Удаление объекта с задержкой
         Destroy(gameObject, 3f);

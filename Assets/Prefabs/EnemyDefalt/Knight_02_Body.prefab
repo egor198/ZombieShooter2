@@ -349,8 +349,6 @@ MonoBehaviour:
   currentHealth: 0
   isAlive: 1
   damageAnimChance: 0.3
-  chanceToSpawnInFront: 0
-  spawnRiseSpeed: 2
   moveSpeed: 2
   rotationSpeed: 8
   stoppingDistance: 0.1
@@ -380,6 +378,9 @@ MonoBehaviour:
   moveSound: {fileID: 8300000, guid: cfaa31361f7ba4a23b747862467ff938, type: 3}
   targetWaypoint: {fileID: 0}
   manager: {fileID: 0}
+  groundSpawnChance: 0.3
+  groundSpawnDuration: 1.5
+  effectSpawn: {fileID: 3377181292992421420, guid: 48c5715f9603c3842a353516a8baefbb, type: 3}
 --- !u!136 &-6226273706760572527
 CapsuleCollider:
   m_ObjectHideFlags: 0

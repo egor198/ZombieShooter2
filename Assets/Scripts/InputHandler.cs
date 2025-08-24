@@ -17,6 +17,7 @@ public class InputHandler: MonoBehaviour
     public LayerMask criticalHitLayer;
     public LayerMask bonus;
     public LayerMask spawnPointLayer;
+    public LayerMask CameraEnemyLayer;
 
     [Header("Sound Settings")]
     public AudioClip enemyHitSound;
@@ -223,6 +224,11 @@ public class InputHandler: MonoBehaviour
                 FirstAidKit.Highlight(true);
                 hitProcessed = true;
             }
+        }
+        if (!hitProcessed && Physics.Raycast(ray, out RaycastHit HitCameraEnemy, Mathf.Infinity, CameraEnemyLayer))
+        {
+            EnemyCamera enem = HitCameraEnemy.transform.GetComponent<EnemyCamera>();
+            enem.HideObject();
         }
     }
 

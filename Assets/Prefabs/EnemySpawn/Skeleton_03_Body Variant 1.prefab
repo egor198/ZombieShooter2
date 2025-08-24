@@ -290,11 +290,12 @@ MonoBehaviour:
   animator: {fileID: 5942529230315715920}
   enemyRenderer: {fileID: 2687862611677160832}
   deathEffect: {fileID: 5642766282230003982, guid: b5c8ca7ed10b61e499cce8ec3b6e2e4c, type: 3}
-  spawnEffect: {fileID: 0}
+  spawnEffect: {fileID: 3377181292992421420, guid: 48c5715f9603c3842a353516a8baefbb, type: 3}
   emergeDuration: 2
   startDepth: 3
+  spawnPosition: {x: 0, y: 0, z: 0}
   showDebugLogs: 0
-  posUp: {x: 0, y: 0, z: 0}
+  posUp: {x: 0, y: 0.7, z: 0}
   bullet: {fileID: 1206498299807332555, guid: af6c1e3f046eecd4d81330aeb285600f, type: 3}
   pos: {fileID: 7583514604442772062}
 --- !u!1 &2144927221829164384 stripped

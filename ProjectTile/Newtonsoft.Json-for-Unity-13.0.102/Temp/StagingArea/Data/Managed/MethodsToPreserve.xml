@@ -1,0 +1,60 @@
+<linker>
+	<assembly fullname="Assembly-CSharp" ignoreIfMissing="1">
+		<type fullname="LeaderBoardManager">
+			<method name="PauseSound"/>
+			<method name="PauseSound"/>
+			<method name="ResumeSound"/>
+			<method name="ResumeSound"/>
+		</type>
+		<type fullname="ManagerNewUi">
+			<method name="Buttons"/>
+			<method name="Buttons"/>
+			<method name="Buttons"/>
+			<method name="Buttons"/>
+			<method name="Buttons"/>
+			<method name="Buttons"/>
+			<method name="Buttons"/>
+			<method name="Buttons"/>
+			<method name="Buttons"/>
+		</type>
+		<type fullname="Watermelon.PUCustomUIBehavior">
+			<method name="ButtonAds"/>
+		</type>
+		<type fullname="Watermelon.SettingsPanel">
+			<method name="SettingsButton"/>
+		</type>
+		<type fullname="Watermelon.UIComplete">
+			<method name="HomeButton"/>
+		</type>
+		<type fullname="Watermelon.UIGame">
+			<method name="NextLevelDev"/>
+			<method name="OnLevelInputUpdatedDev"/>
+			<method name="PrevLevelDev"/>
+			<method name="ReloadDev"/>
+		</type>
+		<type fullname="Watermelon.UIMainMenu">
+			<method name="AddCoinsButton"/>
+		</type>
+		<type fullname="YG.PurchaseYG">
+			<method name="BuyPurchase"/>
+			<method name="BuyPurchase"/>
+			<method name="BuyPurchase"/>
+			<method name="BuyPurchase"/>
+			<method name="BuyPurchase"/>
+			<method name="BuyPurchase"/>
+			<method name="BuyPurchase"/>
+			<method name="BuyPurchase"/>
+			<method name="BuyPurchase"/>
+			<method name="BuyPurchase"/>
+			<method name="BuyPurchase"/>
+			<method name="BuyPurchase"/>
+			<method name="BuyPurchase"/>
+			<method name="BuyPurchase"/>
+			<method name="BuyPurchase"/>
+			<method name="BuyPurchase"/>
+			<method name="BuyPurchase"/>
+			<method name="BuyPurchase"/>
+			<method name="BuyPurchase"/>
+		</type>
+	</assembly>
+</linker>

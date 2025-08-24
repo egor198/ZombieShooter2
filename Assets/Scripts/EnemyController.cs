@@ -81,6 +81,7 @@ public class EnemyController : MonoBehaviour
     public float groundSpawnDuration = 1.5f; // Длительность анимации появления
     private bool isSpawningFromGround = false;
     private Vector3 groundSpawnOffset = new Vector3(0, -2f, 0); // Смещение под землю
+    public GameObject effectSpawn;
 
     void Start()
     {
@@ -149,6 +150,7 @@ public class EnemyController : MonoBehaviour
 
         // Начальная позиция под землей
         Vector3 undergroundPosition = targetWaypoint.transform.position + groundSpawnOffset;
+        GameObject eff = Instantiate(effectSpawn, undergroundPosition, Quaternion.identity);
         transform.position = undergroundPosition;
 
         // Анимация появления
@@ -173,6 +175,7 @@ public class EnemyController : MonoBehaviour
         // Фиксируем конечную позицию
         transform.position = targetWaypoint.transform.position;
         isSpawningFromGround = false;
+        Destroy(eff);
 
         // После появления начинаем поворот к камере
         PrepareCameraRotation();
@@ -443,7 +446,7 @@ public class EnemyController : MonoBehaviour
 
         isAttacking = false;
         isSpawningFromGround = false;
-        StopAllCoroutines();
+        //StopAllCoroutines();
         //StopAllCoroutines();
 
         // Убираем из списка врагов

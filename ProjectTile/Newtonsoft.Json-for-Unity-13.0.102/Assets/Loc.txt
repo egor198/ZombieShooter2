@@ -1,0 +1,22 @@
+﻿Key,Type,Desc,Russian,English [en-US]
+2hrs,Text,,2 часа,2hrs
+BUY,Text,,КУПИТЬ,BUY
+GET MORE LIVES!,Text,,ПОЛУЧИТЬ БОЛЬШЕ ЖИЗНЕЙ!,GET MORE LIVES!
+GET X3,Text,,X3,GET X3
+HOME,Text,,ДОМ,HOME
+LEVEL COMPLETED,Text,,УРОВЕНЬ ПРОЙДЕН,LEVEL COMPLETED
+LEVEL FAILED,Text,,УРОВЕНЬ ПРОВАЛЕН,LEVEL FAILED
+MENU,Text,,МЕНЮ,MENU
+NEXT,Text,,ДАЛЕЕ,NEXT
+OUT OF POWER-UPS,Text,,НЕТ УСИЛИТЕЛЕЙ,OUT OF POWER-UPS
+POWER PACK,Text,,НАБОР УСИЛИТЕЛЕЙ,POWER PACK
+QUIT,Text,,ВЫЙТИ,QUIT
+QUIT LEVEL?,Text,,ВЫЙТИ С УРОВНЯ?,QUIT LEVEL?
+REPLAY,Text,,ЗАНОВО,REPLAY
+REVIVE,Text,,ПРОДОЛЖИТЬ,REVIVE
+Refill,Text,,Восполнить,Refill
+STARTER PACK,Text,,СТАРТОВЫЙ НАБОР,STARTER PACK
+STORE,Text,,МАГАЗИН,STORE
+Skip,Text,,Пропустить,Skip
+Time to next life:,Text,,Время до след. жизни:,Time to next life:
+You will lose a life!,Text,,Вы потеряете жизнь!,You will lose a life!
