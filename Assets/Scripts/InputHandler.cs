@@ -203,7 +203,7 @@ public class InputHandler: MonoBehaviour
             }
             if (bonusHit.transform.tag == "Box")
             {
-                Destroy(bonusHit.transform.gameObject);
+                bonusHit.transform.gameObject.SetActive(false);
                 GameManager.currentBox++;
             }
             if (bonusHit.transform.tag == "FireBonus")

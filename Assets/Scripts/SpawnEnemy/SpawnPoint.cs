@@ -20,7 +20,7 @@ public class SpawnPoint : MonoBehaviour
     public float maxHealth = 200;
     public float currentHealth;
 
-    private List<SpawnerEnemyController> spawnedEnemies = new List<SpawnerEnemyController>();
+    public List<SpawnerEnemyController> spawnedEnemies = new List<SpawnerEnemyController>();
     private float nextSpawnTime;
     public bool isDestroyed;
 

@@ -24,6 +24,7 @@ public class GameManager : MonoBehaviour
     public bool isLevelMission;
     public GameObject[] spanwsEnemy;
     public GameObject allBoxPoint2;
+    public GameObject allBoxPoint3;
 
     [Header("Bonus")]
     public static bool isFireBonus;
@@ -215,7 +216,7 @@ public class GameManager : MonoBehaviour
                 spanwsEnemy[0].SetActive(true);
                 timerPoint1 += Time.deltaTime;
                 textScoreAndTimer.gameObject.SetActive(true);
-                textScoreAndTimer.text = Mathf.Round(timerPoint1).ToString();
+                textScoreAndTimer.text = $"Продержитесь:{Mathf.Round(timerPoint1)}/40";
                 if(timerPoint1 >= 40)
                 {
                     spanwsEnemy[0].SetActive(false);
@@ -227,24 +228,45 @@ public class GameManager : MonoBehaviour
             if(cameraMove.NormalizedT >= 0.6f && cameraMove.spline == splines[1])
             {
                 allBoxPoint2.SetActive(true);
-                textScoreAndTimer.text = $"{currentBox}/9";
+                textScoreAndTimer.text = $"Соберите ящики:{currentBox}/9";
                 if(currentBox >= 9)
                 {
                     allBoxPoint2.SetActive(false);
                     cameraMove.spline = splines[2];
                     cameraMove.NormalizedT = 0;
+                    currentBox = 0;
                 }
             }
             if (cameraMove.NormalizedT >= 0.6f && cameraMove.spline == splines[2])
             {
                 spanwsEnemy[1].SetActive(true);
                 timerPoint1 += Time.deltaTime;
-                textScoreAndTimer.text = Mathf.Round(timerPoint1).ToString();
+                textScoreAndTimer.text = $"Продержитесь:{Mathf.Round(timerPoint1)}/40";
                 if (timerPoint1 >= 40)
                 {
                     spanwsEnemy[1].SetActive(false);
-                    SceneManager.LoadScene(0);
+                    cameraMove.spline = splines[3];
+                    cameraMove.NormalizedT = 0;
+                    timerPoint1 = 0;
                 }
+            }
+            if(cameraMove.NormalizedT >= 0.6f && cameraMove.spline == splines[3])
+            {
+                allBoxPoint3.SetActive(true);
+                textScoreAndTimer.text = $"Соберите ящики:{currentBox}/6";
+                if (currentBox >= 6)
+                {
+                    allBoxPoint3.SetActive(false);
+                    cameraMove.spline = splines[4];
+                    cameraMove.NormalizedT = 0;
+                    currentBox = 0;
+                }
+            }
+            if (cameraMove.NormalizedT == 1f && cameraMove.spline == splines[4])
+            {
+                cameraMove.spline = splines[0];
+                cameraMove.NormalizedT = 0;
+                timerPoint1 = 0;
             }
         }
     }
