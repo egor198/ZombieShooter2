@@ -118,6 +118,7 @@ public class SpawnerEnemyController : MonoBehaviour
         // Завершение появления
         isEmerging = false;
         currentState = EnemyState.MovingToPosition;
+        rb.velocity = Vector3.zero;
 
         // Включаем физику и коллайдеры
         if (rb != null) rb.isKinematic = false;

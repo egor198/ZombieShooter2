@@ -90,7 +90,7 @@ public class GameManager : MonoBehaviour
 
     private void Update()
     {
-        if(timer <= 0 && !isCameraEnemy)
+        if(timer <= 0 && !isCameraEnemy && cameraMove.NormalizedT == 1)
         {
             Instantiate(prefabCameraEnemys[Random.Range(0, prefabCameraEnemys.Length)], Camera.main.transform);
             isCameraEnemy = true;

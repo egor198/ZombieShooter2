@@ -9,17 +9,21 @@ public class EnemyCamera : MonoBehaviour
     private Transform hidePosition;
 
     private float timer;
+    private Animator animator;
 
     private bool isAnimating = false;
     private Coroutine currentAnimation;
 
     void Start()
     {
+        animator = GetComponent<Animator>();
+        timer = 5;
         // Начальная позиция (скрыта под камерой)
         showPosition = Camera.main.transform.GetChild(1);
         hidePosition = Camera.main.transform.GetChild(0);
         transform.rotation = hidePosition.transform.rotation;
         transform.position = hidePosition.position;
+        animator.SetBool("isIdle", true);
         ShowObject();
     }
 
@@ -53,5 +57,16 @@ public class EnemyCamera : MonoBehaviour
 
         transform.position = targetPosition.position;
         isAnimating = false;
+    }
+
+    private void Update()
+    {
+        timer -= Time.deltaTime;
+        if(timer <= 0)
+        {
+            GameManager.currentHP -= 50;
+            animator.SetTrigger("isAttack");
+            timer = 5;
+        }
     }
 }

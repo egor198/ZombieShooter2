@@ -122,6 +122,7 @@ public class SpawnPoint : MonoBehaviour
             // Отключаем физику и коллайдеры на время появления
             Rigidbody rb = enemy.GetComponent<Rigidbody>();
             if (rb != null) rb.isKinematic = true;
+            rb.velocity = Vector3.zero; //new Vector3(rb.velocity.x, 0, rb.velocity.z);
             enemy.GetComponent<Collider>().enabled = false;
 
             enemyController.SetSpawnPoint(this);
