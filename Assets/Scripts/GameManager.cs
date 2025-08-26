@@ -346,6 +346,8 @@ public class GameManager : MonoBehaviour
         {
             SceneManager.LoadScene(0);
             Time.timeScale = 1;
+            isFireBonus = false;
+            isIceBonus = false;
             currentPoint = 0;
             cameraMove.NormalizedT = 0;
             comboCrit = 0;
@@ -355,6 +357,8 @@ public class GameManager : MonoBehaviour
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
             Time.timeScale = 1;
+            isFireBonus = false;
+            isIceBonus = false;
             currentPoint = 0;
             cameraMove.NormalizedT = 0;
             comboCrit = 0;
@@ -364,10 +368,17 @@ public class GameManager : MonoBehaviour
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
             Time.timeScale = 1;
+            isFireBonus = false;
+            isIceBonus = false;
             currentPoint = 0;
             cameraMove.NormalizedT = 0;
             comboCrit = 0;
             score = 0;
+        }
+        if(index == 4)
+        {
+            panelPause.SetActive(false);
+            Time.timeScale = 1;
         }
     }
 }

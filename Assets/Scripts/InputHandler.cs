@@ -157,12 +157,12 @@ public class InputHandler: MonoBehaviour
             {
                 GameManager.score += 25;
                 GameManager.comboCrit = 0;
-                if (GameManager.isFireBonus)
+                if (GameManager.isFireBonus && !enemy.isBoss)
                 {
                     enemy.TakeDamage(enemy.maxHealth);
                     Instantiate(effectFireBonus, Enemyhit.point, Quaternion.identity);
                 }
-                else if (GameManager.isIceBonus)
+                else if (GameManager.isIceBonus && !enemy.isBoss)
                 {
                     enemy.TakeDamage(enemy.maxHealth);
                     Instantiate(effectIceBonus, Enemyhit.point, Quaternion.identity);
