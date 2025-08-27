@@ -166,6 +166,16 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 3852874953234493480}
   m_SourcePrefab: {fileID: 100100000, guid: cbbe2155e59c8244f9e7d1b5578bceac, type: 3}
+--- !u!1 &25893846228018412 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5075315190866438319, guid: cbbe2155e59c8244f9e7d1b5578bceac, type: 3}
+  m_PrefabInstance: {fileID: 5058908070557961283}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &743036087707725731 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5511017762420138976, guid: cbbe2155e59c8244f9e7d1b5578bceac, type: 3}
+  m_PrefabInstance: {fileID: 5058908070557961283}
+  m_PrefabAsset: {fileID: 0}
 --- !u!137 &1425233607509359109 stripped
 SkinnedMeshRenderer:
   m_CorrespondingSourceObject: {fileID: 6193479164998055494, guid: cbbe2155e59c8244f9e7d1b5578bceac, type: 3}
@@ -229,6 +239,12 @@ MonoBehaviour:
   groundSpawnChance: 0.3
   groundSpawnDuration: 1.5
   effectSpawn: {fileID: 3377181292992421420, guid: 48c5715f9603c3842a353516a8baefbb, type: 3}
+  isIce: 0
+  objects:
+  - {fileID: 8051671178550861661}
+  - {fileID: 6102954215718907253}
+  - {fileID: 743036087707725731}
+  - {fileID: 25893846228018412}
 --- !u!136 &1349382456607966116
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -411,6 +427,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sourceAnimator: {fileID: 8593246500795113864}
+--- !u!1 &6102954215718907253 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1334990255615582518, guid: cbbe2155e59c8244f9e7d1b5578bceac, type: 3}
+  m_PrefabInstance: {fileID: 5058908070557961283}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &6271175923956737852 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1239452316342070143, guid: cbbe2155e59c8244f9e7d1b5578bceac, type: 3}
@@ -464,6 +485,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damageMultiplier: 2
   enemyController: {fileID: 2899891408414324285}
+--- !u!1 &8051671178550861661 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2993084302833521438, guid: cbbe2155e59c8244f9e7d1b5578bceac, type: 3}
+  m_PrefabInstance: {fileID: 5058908070557961283}
+  m_PrefabAsset: {fileID: 0}
 --- !u!95 &8593246500795113864 stripped
 Animator:
   m_CorrespondingSourceObject: {fileID: 3563897889840442827, guid: cbbe2155e59c8244f9e7d1b5578bceac, type: 3}

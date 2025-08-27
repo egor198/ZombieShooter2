@@ -177,6 +177,11 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 7467817651943515534}
   m_SourcePrefab: {fileID: 100100000, guid: a635b50c4ad68f648a4cfc93629fc514, type: 3}
+--- !u!1 &865659011572983846 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2784313948845476812, guid: a635b50c4ad68f648a4cfc93629fc514, type: 3}
+  m_PrefabInstance: {fileID: 3071646810670228458}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1458559114054414332 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4511895757550963734, guid: a635b50c4ad68f648a4cfc93629fc514, type: 3}
@@ -198,6 +203,21 @@ MonoBehaviour:
 --- !u!4 &1641933891391749956 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4353288333789600942, guid: a635b50c4ad68f648a4cfc93629fc514, type: 3}
+  m_PrefabInstance: {fileID: 3071646810670228458}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1717001847361540204 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4428351891744322438, guid: a635b50c4ad68f648a4cfc93629fc514, type: 3}
+  m_PrefabInstance: {fileID: 3071646810670228458}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1795115767772647168 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3623470014117407978, guid: a635b50c4ad68f648a4cfc93629fc514, type: 3}
+  m_PrefabInstance: {fileID: 3071646810670228458}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1809399347941611105 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3728111459852875147, guid: a635b50c4ad68f648a4cfc93629fc514, type: 3}
   m_PrefabInstance: {fileID: 3071646810670228458}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &2126405461944313342 stripped
@@ -253,6 +273,13 @@ MonoBehaviour:
   groundSpawnChance: 0.3
   groundSpawnDuration: 1.5
   effectSpawn: {fileID: 3377181292992421420, guid: 48c5715f9603c3842a353516a8baefbb, type: 3}
+  isIce: 0
+  objects:
+  - {fileID: 1717001847361540204}
+  - {fileID: 1795115767772647168}
+  - {fileID: 1809399347941611105}
+  - {fileID: 8061128749610206119}
+  - {fileID: 865659011572983846}
 --- !u!136 &3323968803300210250
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -496,5 +523,10 @@ MonoBehaviour:
 --- !u!137 &5914580058882144920 stripped
 SkinnedMeshRenderer:
   m_CorrespondingSourceObject: {fileID: 8697684232055724402, guid: a635b50c4ad68f648a4cfc93629fc514, type: 3}
+  m_PrefabInstance: {fileID: 3071646810670228458}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &8061128749610206119 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5007527123783606349, guid: a635b50c4ad68f648a4cfc93629fc514, type: 3}
   m_PrefabInstance: {fileID: 3071646810670228458}
   m_PrefabAsset: {fileID: 0}

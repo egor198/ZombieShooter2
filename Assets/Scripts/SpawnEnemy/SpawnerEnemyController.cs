@@ -57,6 +57,11 @@ public class SpawnerEnemyController : MonoBehaviour
     private float nextAttackTime;
     private bool isAttacking = false;
 
+    [Header("IceBonus")]
+    public bool isIce;
+    public GameObject[] objects;
+    private float timerIce = 5;
+
     void Start()
     {
         rb = GetComponent<Rigidbody>();
@@ -139,6 +144,35 @@ public class SpawnerEnemyController : MonoBehaviour
     void Update()
     {
         if (!isAlive || isEmerging) return;
+
+        if (isIce)
+        {
+            foreach (GameObject obj in objects)
+            {
+                foreach (var mat in obj.GetComponent<Renderer>().materials)
+                {
+                    mat.EnableKeyword("_EMISSION");
+                    mat.SetColor("_EmissionColor", Color.blue * 0.5f);
+                }
+            }
+            timerIce -= Time.deltaTime;
+            if (timerIce < 0)
+            {
+                timerIce = 5;
+                isIce = false;
+            }
+            return;
+        }
+        else
+        {
+            foreach (GameObject obj in objects)
+            {
+                foreach (var mat in obj.GetComponent<Renderer>().materials)
+                {
+                    mat.DisableKeyword("_EMISSION");
+                }
+            }
+        }
 
         switch (currentState)
         {

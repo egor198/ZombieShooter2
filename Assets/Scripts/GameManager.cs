@@ -73,7 +73,7 @@ public class GameManager : MonoBehaviour
     private void Start()
     {
         timerDuration = 10;
-        timer = 30;
+        timer = 3000000000;
         if(PlayerPrefs.GetInt("Dif") == 0)
             Difficult = difficult.defalt;
         else
@@ -225,7 +225,7 @@ public class GameManager : MonoBehaviour
                     timerPoint1 = 0;
                 }
             }
-            if(cameraMove.NormalizedT >= 0.6f && cameraMove.spline == splines[1])
+            /*if(cameraMove.NormalizedT >= 0.6f && cameraMove.spline == splines[1])
             {
                 allBoxPoint2.SetActive(true);
                 textScoreAndTimer.text = $"Соберите ящики:{currentBox}/9";
@@ -236,8 +236,8 @@ public class GameManager : MonoBehaviour
                     cameraMove.NormalizedT = 0;
                     currentBox = 0;
                 }
-            }
-            if (cameraMove.NormalizedT >= 0.6f && cameraMove.spline == splines[2])
+            }*/
+            if (cameraMove.NormalizedT >= 0.6f && cameraMove.spline == splines[1])
             {
                 spanwsEnemy[1].SetActive(true);
                 timerPoint1 += Time.deltaTime;
@@ -245,12 +245,12 @@ public class GameManager : MonoBehaviour
                 if (timerPoint1 >= 40)
                 {
                     spanwsEnemy[1].SetActive(false);
-                    cameraMove.spline = splines[3];
+                    cameraMove.spline = splines[2];
                     cameraMove.NormalizedT = 0;
                     timerPoint1 = 0;
                 }
             }
-            if(cameraMove.NormalizedT >= 0.6f && cameraMove.spline == splines[3])
+            /*if(cameraMove.NormalizedT >= 0.6f && cameraMove.spline == splines[3])
             {
                 allBoxPoint3.SetActive(true);
                 textScoreAndTimer.text = $"Соберите ящики:{currentBox}/6";
@@ -261,8 +261,8 @@ public class GameManager : MonoBehaviour
                     cameraMove.NormalizedT = 0;
                     currentBox = 0;
                 }
-            }
-            if (cameraMove.NormalizedT == 1f && cameraMove.spline == splines[4])
+            }*/
+            if (cameraMove.NormalizedT == 1f && cameraMove.spline == splines[2])
             {
                 cameraMove.spline = splines[0];
                 cameraMove.NormalizedT = 0;

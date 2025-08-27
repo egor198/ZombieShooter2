@@ -135,7 +135,8 @@ public class InputHandler: MonoBehaviour
                 }
                 else if (GameManager.isIceBonus)
                 {
-                    enemy.TakeDamage(enemy.maxHealth);
+                    enemy.TakeDamage(baseDamage);
+                    enemy.isIce = true;
                     Instantiate(effectIceBonus, hit.point, Quaternion.identity);
                 }
                 else
@@ -164,7 +165,8 @@ public class InputHandler: MonoBehaviour
                 }
                 else if (GameManager.isIceBonus && !enemy.isBoss)
                 {
-                    enemy.TakeDamage(enemy.maxHealth);
+                    enemy.TakeDamage(baseDamage);
+                    enemy.isIce = true;
                     Instantiate(effectIceBonus, Enemyhit.point, Quaternion.identity);
                 }
                 else

@@ -228,6 +228,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sourceAnimator: {fileID: 2359314170756309282}
+--- !u!1 &1078908811316811675 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4879288505509405732, guid: c0451ea9e59c16a4d868fb4c1625aa32, type: 3}
+  m_PrefabInstance: {fileID: 5570876682503140287}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1238654271797817297 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6665098393240231022, guid: c0451ea9e59c16a4d868fb4c1625aa32, type: 3}
+  m_PrefabInstance: {fileID: 5570876682503140287}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1410127916624128606 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6836038782440249825, guid: c0451ea9e59c16a4d868fb4c1625aa32, type: 3}
@@ -246,6 +256,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sourceAnimator: {fileID: 2359314170756309282}
+--- !u!1 &1586807683820762181 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6578285700693886970, guid: c0451ea9e59c16a4d868fb4c1625aa32, type: 3}
+  m_PrefabInstance: {fileID: 5570876682503140287}
+  m_PrefabAsset: {fileID: 0}
 --- !u!137 &1743355314688888916 stripped
 SkinnedMeshRenderer:
   m_CorrespondingSourceObject: {fileID: 6160395149152691179, guid: c0451ea9e59c16a4d868fb4c1625aa32, type: 3}
@@ -274,6 +289,26 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sourceAnimator: {fileID: 2359314170756309282}
+--- !u!1 &2766272426134299373 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7722684688655602002, guid: c0451ea9e59c16a4d868fb4c1625aa32, type: 3}
+  m_PrefabInstance: {fileID: 5570876682503140287}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &3095100111056689793 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7474774666214992190, guid: c0451ea9e59c16a4d868fb4c1625aa32, type: 3}
+  m_PrefabInstance: {fileID: 5570876682503140287}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &3558703946840421533 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8947725232788932386, guid: c0451ea9e59c16a4d868fb4c1625aa32, type: 3}
+  m_PrefabInstance: {fileID: 5570876682503140287}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &4389417136071283950 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8189212574455277393, guid: c0451ea9e59c16a4d868fb4c1625aa32, type: 3}
+  m_PrefabInstance: {fileID: 5570876682503140287}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &5349518418739094662 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 536760115135600441, guid: c0451ea9e59c16a4d868fb4c1625aa32, type: 3}
@@ -363,6 +398,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damageMultiplier: 2
   enemyController: {fileID: 641945495225586021}
+--- !u!1 &8362696558079831796 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4125858997320408395, guid: c0451ea9e59c16a4d868fb4c1625aa32, type: 3}
+  m_PrefabInstance: {fileID: 5570876682503140287}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &8529214510912011096 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4256572056895703271, guid: c0451ea9e59c16a4d868fb4c1625aa32, type: 3}
@@ -439,6 +479,16 @@ MonoBehaviour:
   groundSpawnChance: 0.3
   groundSpawnDuration: 1.5
   effectSpawn: {fileID: 3377181292992421420, guid: 48c5715f9603c3842a353516a8baefbb, type: 3}
+  isIce: 0
+  objects:
+  - {fileID: 4389417136071283950}
+  - {fileID: 1586807683820762181}
+  - {fileID: 3095100111056689793}
+  - {fileID: 1078908811316811675}
+  - {fileID: 2766272426134299373}
+  - {fileID: 3558703946840421533}
+  - {fileID: 8362696558079831796}
+  - {fileID: 1238654271797817297}
 --- !u!136 &235339136745718164
 CapsuleCollider:
   m_ObjectHideFlags: 0

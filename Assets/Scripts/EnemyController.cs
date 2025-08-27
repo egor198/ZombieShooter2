@@ -83,6 +83,11 @@ public class EnemyController : MonoBehaviour
     private Vector3 groundSpawnOffset = new Vector3(0, -2f, 0); // Смещение под землю
     public GameObject effectSpawn;
 
+    [Header("IceBonus")]
+    public bool isIce;
+    public GameObject[] objects;
+    private float timerIce = 5;
+
     void Start()
     {
         rb = GetComponent<Rigidbody>();
@@ -116,6 +121,35 @@ public class EnemyController : MonoBehaviour
     void Update()
     {
         if (!isAlive || isSpawningFromGround) return;
+
+        if (isIce)
+        {
+            foreach (GameObject obj in objects)
+            {
+                foreach (var mat in obj.GetComponent<Renderer>().materials)
+                {
+                    mat.EnableKeyword("_EMISSION");
+                    mat.SetColor("_EmissionColor", Color.blue * 0.5f);
+                }
+            }
+            timerIce -= Time.deltaTime;
+            if(timerIce < 0)
+            {
+                timerIce = 5;
+                isIce = false;
+            }
+            return;
+        }
+        else
+        {
+            foreach (GameObject obj in objects)
+            {
+                foreach (var mat in obj.GetComponent<Renderer>().materials)
+                {
+                    mat.DisableKeyword("_EMISSION");
+                }
+            }
+        }
 
         // Атака при достижении точки
         if (isAtWaypoint && !isRotatingToCamera && isReadyToAttack())
@@ -497,7 +531,7 @@ public class EnemyController : MonoBehaviour
         isAttacking = false;
 
         // Если это босс, перемещаем его на новую точку после атаки
-        if (isBoss && isAlive && isAtWaypoint)
+        if ( isAlive && isAtWaypoint)
         {
             yield return new WaitForSeconds(bossMoveDelay);
             MoveBossToNewPosition();
@@ -629,11 +663,23 @@ public class EnemyController : MonoBehaviour
         return isAlive && (isActive || isAtWaypoint);
     }
 
-    private void OnCollisionEnter(Collision collision)
+    private void OnTriggerEnter(Collider other)
     {
-        if (collision.gameObject.CompareTag("Explosion"))
+        if (other.gameObject.CompareTag("Explosion"))
         {
-            TakeDamage(maxHealth);
+            damageAnimChance = 1;
+            TakeDamage(0);
+            damageAnimChance = 0.3f;
+        }
+    }
+
+    private void OnTriggerStay(Collider other)
+    {
+        if (other.gameObject.CompareTag("Explosion"))
+        {
+            damageAnimChance = 1;
+            TakeDamage(0);
+            damageAnimChance = 0.3f;
         }
     }
 }

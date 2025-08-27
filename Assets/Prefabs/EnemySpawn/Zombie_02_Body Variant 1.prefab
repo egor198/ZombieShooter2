@@ -231,6 +231,11 @@ MonoBehaviour:
   startDepth: 3
   spawnPosition: {x: 0, y: 0, z: 0}
   showDebugLogs: 0
+  isIce: 0
+  objects:
+  - {fileID: 7986138639512422907}
+  - {fileID: 6972683534112234703}
+  - {fileID: 9009224888517347453}
   posUp: {x: 0, y: 0.7, z: 0}
   bullet: {fileID: 1590415177872986601, guid: acdb90624a404aa438447006f1026065, type: 3}
   pos: {fileID: 5032934017713473184}
@@ -310,8 +315,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damageMultiplier: 2
   enemyController: {fileID: 0}
+--- !u!1 &6972683534112234703 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6662941323810151084, guid: 9ddd813c8158a214f901f7800f00ca7f, type: 3}
+  m_PrefabInstance: {fileID: 4374252453235787363}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &7986138639512422907 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5935746136620453784, guid: 9ddd813c8158a214f901f7800f00ca7f, type: 3}
+  m_PrefabInstance: {fileID: 4374252453235787363}
+  m_PrefabAsset: {fileID: 0}
 --- !u!137 &8254695337183398566 stripped
 SkinnedMeshRenderer:
   m_CorrespondingSourceObject: {fileID: 5637071607540468933, guid: 9ddd813c8158a214f901f7800f00ca7f, type: 3}
+  m_PrefabInstance: {fileID: 4374252453235787363}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &9009224888517347453 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4734203652819865118, guid: 9ddd813c8158a214f901f7800f00ca7f, type: 3}
   m_PrefabInstance: {fileID: 4374252453235787363}
   m_PrefabAsset: {fileID: 0}

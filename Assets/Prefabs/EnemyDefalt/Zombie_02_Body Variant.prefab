@@ -201,6 +201,11 @@ MonoBehaviour:
   groundSpawnChance: 0.3
   groundSpawnDuration: 1.5
   effectSpawn: {fileID: 3377181292992421420, guid: 48c5715f9603c3842a353516a8baefbb, type: 3}
+  isIce: 0
+  objects:
+  - {fileID: 7986138639512422907}
+  - {fileID: 6972683534112234703}
+  - {fileID: 9009224888517347453}
 --- !u!136 &4630721749889745378
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -423,8 +428,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damageMultiplier: 2
   enemyController: {fileID: 2329378951870144013}
+--- !u!1 &6972683534112234703 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6662941323810151084, guid: 9ddd813c8158a214f901f7800f00ca7f, type: 3}
+  m_PrefabInstance: {fileID: 4374252453235787363}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &7986138639512422907 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5935746136620453784, guid: 9ddd813c8158a214f901f7800f00ca7f, type: 3}
+  m_PrefabInstance: {fileID: 4374252453235787363}
+  m_PrefabAsset: {fileID: 0}
 --- !u!137 &8254695337183398566 stripped
 SkinnedMeshRenderer:
   m_CorrespondingSourceObject: {fileID: 5637071607540468933, guid: 9ddd813c8158a214f901f7800f00ca7f, type: 3}
+  m_PrefabInstance: {fileID: 4374252453235787363}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &9009224888517347453 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4734203652819865118, guid: 9ddd813c8158a214f901f7800f00ca7f, type: 3}
   m_PrefabInstance: {fileID: 4374252453235787363}
   m_PrefabAsset: {fileID: 0}

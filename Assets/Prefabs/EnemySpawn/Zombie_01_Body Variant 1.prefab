@@ -161,6 +161,16 @@ Animator:
   m_CorrespondingSourceObject: {fileID: 2318499836283732938, guid: eedaea4279c85a54fb033a8a76160aa9, type: 3}
   m_PrefabInstance: {fileID: 435915592507097593}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &3423515755239570776 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2994449116273147041, guid: eedaea4279c85a54fb033a8a76160aa9, type: 3}
+  m_PrefabInstance: {fileID: 435915592507097593}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &5431642359791625798 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5579325628570183615, guid: eedaea4279c85a54fb033a8a76160aa9, type: 3}
+  m_PrefabInstance: {fileID: 435915592507097593}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &5627433060212206426 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5193783307506838179, guid: eedaea4279c85a54fb033a8a76160aa9, type: 3}
@@ -179,6 +189,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sourceAnimator: {fileID: 2747294431484756531}
+--- !u!1 &5656375008142543880 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5220751628944756209, guid: eedaea4279c85a54fb033a8a76160aa9, type: 3}
+  m_PrefabInstance: {fileID: 435915592507097593}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &6672302518267028092 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6526957354719683461, guid: eedaea4279c85a54fb033a8a76160aa9, type: 3}
+  m_PrefabInstance: {fileID: 435915592507097593}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &6964582068898276625 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7398152593115718888, guid: eedaea4279c85a54fb033a8a76160aa9, type: 3}
@@ -341,6 +361,12 @@ MonoBehaviour:
   startDepth: 3
   spawnPosition: {x: 0, y: 0, z: 0}
   showDebugLogs: 0
+  isIce: 0
+  objects:
+  - {fileID: 5656375008142543880}
+  - {fileID: 5431642359791625798}
+  - {fileID: 6672302518267028092}
+  - {fileID: 3423515755239570776}
   posUp: {x: 0, y: 0.7, z: 0}
   bullet: {fileID: 5824670795371433373, guid: f6fd568b816c64943a44efc3add3a881, type: 3}
   pos: {fileID: 7443337342963170336}

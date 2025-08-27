@@ -10,15 +10,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: e127140b0b47d4e498aca5ab936f3bb7, type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.96464
+      value: 0.5180066
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: e127140b0b47d4e498aca5ab936f3bb7, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.96464
+      value: 0.5180066
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: e127140b0b47d4e498aca5ab936f3bb7, type: 3}
       propertyPath: m_LocalScale.z
-      value: 0.96464
+      value: 0.5180066
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: e127140b0b47d4e498aca5ab936f3bb7, type: 3}
       propertyPath: m_LocalPosition.x
@@ -94,6 +94,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: e127140b0b47d4e498aca5ab936f3bb7, type: 3}
       insertIndex: -1
       addedObject: {fileID: 2543091544425532435}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: e127140b0b47d4e498aca5ab936f3bb7, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 8812058839310114973}
   m_SourcePrefab: {fileID: 100100000, guid: e127140b0b47d4e498aca5ab936f3bb7, type: 3}
 --- !u!23 &476496806574188006 stripped
 MeshRenderer:
@@ -142,3 +145,16 @@ MonoBehaviour:
   renderer: {fileID: 476496806574188006}
   highlightColor: {r: 0.36139083, g: 1, b: 0, a: 0.5}
   isTNT: 1
+--- !u!114 &8812058839310114973
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2041725684573410266}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d372e3bf15351d549b540c3a6f83fac6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rotationSpeed: 30

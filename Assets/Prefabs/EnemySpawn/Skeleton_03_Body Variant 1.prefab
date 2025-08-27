@@ -209,6 +209,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damageMultiplier: 2
   enemyController: {fileID: 0}
+--- !u!1 &1100184269705857445 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1649813877493217234, guid: a0d528c4a9f0bf14c985c97142f3da53, type: 3}
+  m_PrefabInstance: {fileID: 1847024746830790263}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1140508713033563536 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1617378963484443623, guid: a0d528c4a9f0bf14c985c97142f3da53, type: 3}
@@ -295,6 +300,12 @@ MonoBehaviour:
   startDepth: 3
   spawnPosition: {x: 0, y: 0, z: 0}
   showDebugLogs: 0
+  isIce: 0
+  objects:
+  - {fileID: 7751293400197966665}
+  - {fileID: 1100184269705857445}
+  - {fileID: 7930249285857106580}
+  - {fileID: 8562593170610241258}
   posUp: {x: 0, y: 0.7, z: 0}
   bullet: {fileID: 1206498299807332555, guid: af6c1e3f046eecd4d81330aeb285600f, type: 3}
   pos: {fileID: 7583514604442772062}
@@ -344,3 +355,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sourceAnimator: {fileID: 5942529230315715920}
+--- !u!1 &7751293400197966665 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8229153487130547518, guid: a0d528c4a9f0bf14c985c97142f3da53, type: 3}
+  m_PrefabInstance: {fileID: 1847024746830790263}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &7930249285857106580 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8623289983034893539, guid: a0d528c4a9f0bf14c985c97142f3da53, type: 3}
+  m_PrefabInstance: {fileID: 1847024746830790263}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &8562593170610241258 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8031468618331766941, guid: a0d528c4a9f0bf14c985c97142f3da53, type: 3}
+  m_PrefabInstance: {fileID: 1847024746830790263}
+  m_PrefabAsset: {fileID: 0}

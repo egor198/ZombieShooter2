@@ -212,6 +212,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damageMultiplier: 2
   enemyController: {fileID: 7453685397937168014}
+--- !u!1 &1100184269705857445 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1649813877493217234, guid: a0d528c4a9f0bf14c985c97142f3da53, type: 3}
+  m_PrefabInstance: {fileID: 1847024746830790263}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1140508713033563536 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1617378963484443623, guid: a0d528c4a9f0bf14c985c97142f3da53, type: 3}
@@ -265,6 +270,12 @@ MonoBehaviour:
   groundSpawnChance: 0.3
   groundSpawnDuration: 1.5
   effectSpawn: {fileID: 3377181292992421420, guid: 48c5715f9603c3842a353516a8baefbb, type: 3}
+  isIce: 0
+  objects:
+  - {fileID: 7751293400197966665}
+  - {fileID: 1100184269705857445}
+  - {fileID: 7930249285857106580}
+  - {fileID: 8562593170610241258}
 --- !u!136 &5868196814623051605
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -457,3 +468,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sourceAnimator: {fileID: 5942529230315715920}
+--- !u!1 &7751293400197966665 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8229153487130547518, guid: a0d528c4a9f0bf14c985c97142f3da53, type: 3}
+  m_PrefabInstance: {fileID: 1847024746830790263}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &7930249285857106580 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8623289983034893539, guid: a0d528c4a9f0bf14c985c97142f3da53, type: 3}
+  m_PrefabInstance: {fileID: 1847024746830790263}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &8562593170610241258 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8031468618331766941, guid: a0d528c4a9f0bf14c985c97142f3da53, type: 3}
+  m_PrefabInstance: {fileID: 1847024746830790263}
+  m_PrefabAsset: {fileID: 0}
